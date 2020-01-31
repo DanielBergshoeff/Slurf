@@ -1,0 +1,71 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Player1",
+            "id": "c9d74bed-3fb6-4697-b07b-eceb0e65d095",
+            "actions": [
+                {
+                    "name": "MoveTrunkXAxis",
+                    "type": "Value",
+                    "id": "85da7c1d-0e6b-4d3d-aa67-c3011591d38c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTrunkZAxis",
+                    "type": "Value",
+                    "id": "6dbf6ceb-5f62-4737-9e12-2774b8b55ece",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTrunkEnd",
+                    "type": "Value",
+                    "id": "24efdad2-a567-443d-aa16-40db558ebc7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0de8462a-922d-40b6-82d8-abed9645658a",
+                    "path": "<XInputController>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16ecbfe9-9e25-4cf2-93df-344115030a06",
+                    "path": "<XInputController>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkZAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4807dd61-0496-4fb2-ac99-f580491c6c5f",
+                    "path": "<XInputController>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
