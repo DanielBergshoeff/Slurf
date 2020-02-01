@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 class StickyPiece : MonoBehaviour, IStickable
 {
-    public StickyPieces root;
-
+    public List<Transform> ConnectedPieces;
+    public bool fixedJoint = false;
     private bool sticky = false;
     private bool dragging = false;
     private float distance;
     private Vector3 startDist;
 
-    private void OnMouseDown()
+    private void Awake()
     {
-        dragging = true;
-        MakeSticky();
-        distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector3 rayPoint = ray.GetPoint(distance);
-        startDist = transform.position - rayPoint;
-    }
+        if (GetComponent<MeshCollider>() == null)
+            gameObject.AddComponent<MeshCollider>().convex = true;
 
-    private void OnMouseUp()
-    {
-        dragging = false;
+        if (GetComponent<Rigidbody>() == null)
+            gameObject.AddComponent<Rigidbody>();
+
+        tag = "Suckable";
     }
 
     private void Update()
@@ -35,11 +32,23 @@ class StickyPiece : MonoBehaviour, IStickable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!sticky) { return; }
-
         if (collision.transform.GetComponent<IStickable>() == null) { return; }
 
-        root.pieces.Add(collision.transform);
+        if (ConnectedPieces.Contains(collision.transform))
+            return;
+
+        if (!collision.GetContact(0).thisCollider.GetComponent<StickyPiece>().sticky)
+            return;
+
+        StickyPiece sp = collision.gameObject.GetComponent<StickyPiece>();
+        if (sp.fixedJoint)
+            return;
+
+        ConnectedPieces.Add(collision.transform);
+        sp.ConnectedPieces.Add(transform);
+        sp.transform.parent = transform;
+        Destroy(sp.GetComponent<Rigidbody>());
+        sp.fixedJoint = true;
     }
 
     public void MakeSticky()
