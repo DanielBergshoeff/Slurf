@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class TrunkController : MonoBehaviour {
+public class TrunkController : MonoBehaviour
+{
     [SerializeField] private Transform trunkPart;
     [SerializeField] private Transform trunkEnd;
     [SerializeField] private Transform suckPosition;
@@ -35,8 +36,8 @@ public class TrunkController : MonoBehaviour {
 
     private float snotCoolDown = 0f;
 
-    // Start is called before the first frame update
-    void Start() {
+    private void Start()
+    {
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
 
@@ -53,7 +54,8 @@ public class TrunkController : MonoBehaviour {
         suckPositionScript.suckEvent.AddListener(SuckPositionTouched);
     }
 
-    private void SuckPositionTouched(Collider other) {
+    private void SuckPositionTouched(Collider other)
+    {
         if (!sucking || suckingItem != null || other.GetComponent<StickyPiece>() == null)
             return;
 
@@ -63,32 +65,39 @@ public class TrunkController : MonoBehaviour {
         suckingItem.parent = suckPosition;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         triggerAction.Enable();
         suckingAction.Enable();
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         triggerAction.Disable();
         suckingAction.Disable();
     }
 
-    private void TriggerPressedTrue(InputAction.CallbackContext context) {
+    private void TriggerPressedTrue(InputAction.CallbackContext context)
+    {
         triggerPressed = true;
     }
 
-    private void TriggerPressedFalse(InputAction.CallbackContext context) {
+    private void TriggerPressedFalse(InputAction.CallbackContext context)
+    {
         triggerPressed = false;
     }
 
-    private void SuckingTrue(InputAction.CallbackContext context) {
+    private void SuckingTrue(InputAction.CallbackContext context)
+    {
         sucking = true;
     }
 
-    private void SuckingFalse (InputAction.CallbackContext context) {
+    private void SuckingFalse(InputAction.CallbackContext context)
+    {
         sucking = false;
 
-        if (suckingItem == null || suckingItem.parent != suckPosition) {
+        if (suckingItem == null || suckingItem.parent != suckPosition)
+        {
             suckingItem = null;
             return;
         }
@@ -99,22 +108,23 @@ public class TrunkController : MonoBehaviour {
         suckingItem = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         UpdateTrunkPosition();
         Suck();
         UpdateSnotCooldown();
     }
 
-    private void UpdateSnotCooldown() {
+    private void UpdateSnotCooldown()
+    {
         if (snotCoolDown <= 0f)
             return;
 
         snotCoolDown -= Time.deltaTime;
     }
 
-    private void UpdateTrunkPosition() {
+    private void UpdateTrunkPosition()
+    {
         trunkPartRigidBody.velocity = transform.right * xAxis * speed + transform.forward * zAxis * speed;
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
@@ -122,7 +132,8 @@ public class TrunkController : MonoBehaviour {
             trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * 10f + trunkEnd.transform.forward * zAxisRotation * 10f);
     }
 
-    private void Suck() {
+    private void Suck()
+    {
         if (!sucking)
             return;
 
@@ -131,36 +142,42 @@ public class TrunkController : MonoBehaviour {
 
         RaycastHit hit;
         Debug.DrawRay(trunkEnd.transform.position, trunkEnd.transform.up * 100f);
-        if (Physics.Raycast(trunkEnd.transform.position, trunkEnd.transform.up, out hit, 100f)) {
+        if (Physics.Raycast(trunkEnd.transform.position, trunkEnd.transform.up, out hit, 100f))
+        {
             if (!hit.collider.CompareTag("Suckable"))
                 return;
-            
+
             Vector3 heading = (suckPosition.position - hit.collider.transform.position).normalized;
             hit.collider.transform.position = hit.collider.transform.position + heading * Time.deltaTime * 1f;
         }
     }
 
-    public void MoveTrunkXAxis(InputAction.CallbackContext context) {
+    public void MoveTrunkXAxis(InputAction.CallbackContext context)
+    {
         xAxis = (float)context.ReadValueAsObject();
     }
 
-    public void MoveTrunkZAxis(InputAction.CallbackContext context) {
+    public void MoveTrunkZAxis(InputAction.CallbackContext context)
+    {
         zAxis = (float)context.ReadValueAsObject();
     }
 
-    public void MoveTrunkEnd(InputAction.CallbackContext context) {
-        if(!triggerPressed)
+    public void MoveTrunkEnd(InputAction.CallbackContext context)
+    {
+        if (!triggerPressed)
             endAxis = (float)context.ReadValueAsObject();
         else
             xAxisRotation = (float)context.ReadValueAsObject();
     }
 
-    public void RotateTrunkEnd(InputAction.CallbackContext context) {
+    public void RotateTrunkEnd(InputAction.CallbackContext context)
+    {
         if (triggerPressed)
             zAxisRotation = (float)context.ReadValueAsObject();
-    }   
+    }
 
-    public void ShootSnot(InputAction.CallbackContext context) {
+    public void ShootSnot(InputAction.CallbackContext context)
+    {
         if (snotCoolDown > 0f)
             return;
 
