@@ -146,7 +146,7 @@
                 {
                     "name": "",
                     "id": "fbe0318d-424c-43b3-899b-47ebc377e776",
-                    "path": "<XInputController>/rightShoulder",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -157,7 +157,7 @@
                 {
                     "name": "",
                     "id": "4c08f037-c339-48d8-9ae4-0217f5119439",
-                    "path": "<DualShockGamepad>/rightShoulder",
+                    "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
