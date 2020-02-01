@@ -57,56 +57,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "0de8462a-922d-40b6-82d8-abed9645658a",
-                    "path": "<XInputController>/leftStick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkXAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "16ecbfe9-9e25-4cf2-93df-344115030a06",
-                    "path": "<XInputController>/leftStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkZAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4807dd61-0496-4fb2-ac99-f580491c6c5f",
-                    "path": "<XInputController>/rightStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkEnd",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b03ee25b-8750-492f-ade3-8829b9d32b38",
                     "path": "<DualShockGamepad>/rightStick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "MoveTrunkEnd",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4d635785-31d4-4442-bb61-1814935a700a",
-                    "path": "<XInputController>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateTrunk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -123,34 +79,12 @@
                 },
                 {
                     "name": "",
-                    "id": "71ec2634-4b8f-43a4-83f7-435fd0c4ab71",
-                    "path": "<XInputController>/rightStick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateTrunkZ",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "89d9159d-5b88-485d-83e5-d81fa0f5ef5a",
                     "path": "<DualShockGamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "RotateTrunkZ",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fbe0318d-424c-43b3-899b-47ebc377e776",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShootSnot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -184,6 +118,128 @@
                     "processors": "",
                     "groups": "",
                     "action": "MoveTrunkXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "id": "9caedf3a-49c1-4a1c-af8e-04abf7cf49d8",
+            "actions": [
+                {
+                    "name": "MoveTrunkXAxis",
+                    "type": "Value",
+                    "id": "8f954fa3-d1bd-459e-a62e-75d8187aefb8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTrunkZAxis",
+                    "type": "Value",
+                    "id": "b75fb520-77eb-4980-9026-8de3c32e04c6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTrunkEnd",
+                    "type": "Value",
+                    "id": "0639fa5c-02f8-4f9d-8ee0-c054485a8449",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateTrunk",
+                    "type": "Button",
+                    "id": "ead2b6ff-ba8f-45ba-8114-8a171165de6d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateTrunkZ",
+                    "type": "Value",
+                    "id": "e5cfae0f-351d-448d-af0c-af1a81636173",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ShootSnot",
+                    "type": "Button",
+                    "id": "8e76b8c2-7409-4778-be18-278c4f4cf898",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ae3d79d0-fd48-47ff-81bc-8cf3ad8da438",
+                    "path": "<XInputController>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8539f63c-2db5-42e7-b22b-aad6ab5178ae",
+                    "path": "<XInputController>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkZAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0e7c0a26-2957-4bf6-ad9f-865882e00287",
+                    "path": "<XInputController>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e622d6fd-b409-4d20-ac18-4c65daf8cd3b",
+                    "path": "<XInputController>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c98ad6c1-a228-4e50-bf86-c15f874e68dd",
+                    "path": "<XInputController>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunkZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "652c7c43-a042-4548-834a-c85e9198cd5f",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootSnot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
