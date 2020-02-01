@@ -68,30 +68,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d5445226-fa67-4368-939d-9ff87bc59be7",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkXAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "16ecbfe9-9e25-4cf2-93df-344115030a06",
                     "path": "<XInputController>/leftStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkZAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cc80d127-e014-4101-bd54-3b7852eccf74",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -113,7 +91,7 @@
                 {
                     "name": "",
                     "id": "b03ee25b-8750-492f-ade3-8829b9d32b38",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
+                    "path": "<DualShockGamepad>/rightStick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -134,8 +112,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c87a5423-6ffb-41a7-8ecc-cfe20f31fe3b",
+                    "path": "<DualShock4GampadiOS>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "71ec2634-4b8f-43a4-83f7-435fd0c4ab71",
                     "path": "<XInputController>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunkZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89d9159d-5b88-485d-83e5-d81fa0f5ef5a",
+                    "path": "<DualShock4GampadiOS>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -151,6 +151,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShootSnot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c08f037-c339-48d8-9ae4-0217f5119439",
+                    "path": "<DualShock4GampadiOS>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootSnot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc80d127-e014-4101-bd54-3b7852eccf74",
+                    "path": "<DualShockGamepad>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkZAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5445226-fa67-4368-939d-9ff87bc59be7",
+                    "path": "<DualShockGamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkXAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
