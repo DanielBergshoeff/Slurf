@@ -12,11 +12,13 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float snotCoolDownTotal = 3f;
+    [SerializeField] private float snotForce = 250f;
 
     [SerializeField] private InputAction triggerAction;
     [SerializeField] private InputAction suckingAction;
 
     [SerializeField] private GameObject snotPrefab;
+    [SerializeField] private GameObject snotMuzzlePrefab;
     [SerializeField] private int trunkLayer;
 
     private Rigidbody trunkPartRigidBody;
@@ -188,7 +190,11 @@ public class TrunkController : MonoBehaviour
         snotCoolDown = snotCoolDownTotal;
 
         GameObject snot = Instantiate(snotPrefab);
-        snot.GetComponent<Rigidbody>().AddForce(suckPosition.up * 500f);
+        snot.GetComponent<Rigidbody>().AddForce(suckPosition.up * snotForce);
         snot.transform.position = suckPosition.position;
+
+        GameObject snotMuzzle = Instantiate(snotMuzzlePrefab);
+        snotMuzzle.transform.position = suckPosition.position;
+        snotMuzzle.transform.rotation = Quaternion.LookRotation(suckPosition.up);
     }
 }
