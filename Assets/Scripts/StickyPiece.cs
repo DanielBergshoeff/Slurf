@@ -49,23 +49,6 @@ class StickyPiece : MonoBehaviour, IStickable
         if (sp.fixedJoint)
             return;
 
-        /*
-        ConfigurableJoint cj = collision.gameObject.AddComponent<ConfigurableJoint>();
-        cj.connectedBody = GetComponent<Rigidbody>();
-        cj.enablePreprocessing = false;
-        cj.xMotion = ConfigurableJointMotion.Locked;
-        cj.yMotion = ConfigurableJointMotion.Locked;
-        cj.zMotion = ConfigurableJointMotion.Locked;
-        cj.angularXMotion = ConfigurableJointMotion.Locked;
-        cj.angularYMotion = ConfigurableJointMotion.Locked;
-        cj.angularZMotion = ConfigurableJointMotion.Locked;
-        cj.projectionMode = JointProjectionMode.PositionAndRotation;
-        cj.anchor = collision.GetContact(0).point;
-
-        ConnectedPieces.Add(collision.transform);
-        sp.ConnectedPieces.Add(transform);
-        sp.fixedJoint = true;*/
-
         ConnectedPieces.Add(collision.transform);
         sp.ConnectedPieces.Add(transform);
         sp.transform.parent = transform;
