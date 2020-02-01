@@ -10,12 +10,14 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private Transform trunkEnd;
     [SerializeField] private Transform suckPosition;
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float snotCoolDownTotal = 3f;
 
     [SerializeField] private InputAction triggerAction;
     [SerializeField] private InputAction suckingAction;
 
     [SerializeField] private GameObject snotPrefab;
+    [SerializeField] private int trunkLayer;
 
     private Rigidbody trunkPartRigidBody;
     private Rigidbody trunkEndRigidBody;
@@ -63,6 +65,7 @@ public class TrunkController : MonoBehaviour
         suckingItem.GetComponent<Rigidbody>().useGravity = false;
         suckingItem.GetComponent<Rigidbody>().isKinematic = true;
         suckingItem.parent = suckPosition;
+        suckingItem.gameObject.layer = trunkLayer;
     }
 
     private void OnEnable()
@@ -105,6 +108,7 @@ public class TrunkController : MonoBehaviour
         suckingItem.GetComponent<Rigidbody>().useGravity = true;
         suckingItem.GetComponent<Rigidbody>().isKinematic = false;
         suckingItem.parent = null;
+        suckingItem.gameObject.layer = default;
         suckingItem = null;
     }
 
@@ -129,7 +133,7 @@ public class TrunkController : MonoBehaviour
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
         if (triggerPressed)
-            trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * 10f + trunkEnd.transform.forward * zAxisRotation * 10f);
+            trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * rotateSpeed + trunkEnd.transform.forward * zAxisRotation * rotateSpeed);
     }
 
     private void Suck()
