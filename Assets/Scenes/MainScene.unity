@@ -188,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -298,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -502,7 +502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -891,7 +891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1001,7 +1001,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1648,6 +1648,7 @@ MonoBehaviour:
   trunkEnd: {fileID: 849512228}
   suckPosition: {fileID: 395093310}
   speed: 5
+  snotCoolDownTotal: 3
   triggerAction:
     m_Name: Trigger
     m_Type: 1
@@ -1680,6 +1681,7 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Sucking
       m_Flags: 0
+  snotPrefab: {fileID: 0}
 --- !u!1 &1061470791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3248,7 +3250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3535,7 +3537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3688,6 +3690,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 72835227-0135-4b21-aa16-0e30a74141fc
     m_ActionName: Player1/RotateTrunkZ[/XInputControllerWindows/rightStick/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2116285616}
+        m_MethodName: ShootSnot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7fad6c47-dac7-4c25-b215-55cfacecc5c5
+    m_ActionName: Player1/ShootSnot[/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1
@@ -3709,6 +3726,7 @@ MonoBehaviour:
   trunkEnd: {fileID: 1656894807}
   suckPosition: {fileID: 1816314050}
   speed: 5
+  snotCoolDownTotal: 1
   triggerAction:
     m_Name: Trigger
     m_Type: 1
@@ -3741,6 +3759,8 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Sucking
       m_Flags: 0
+  snotPrefab: {fileID: 8149685297739465835, guid: 89ad27435b9435c42b25cd8ffa54e39f,
+    type: 3}
 --- !u!81 &2116285617
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3800,7 +3820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116285614}
   m_LocalRotation: {x: 0.40883505, y: -0, z: -0, w: 0.9126083}
-  m_LocalPosition: {x: 0, y: 3.06, z: -9.82}
+  m_LocalPosition: {x: 0, y: 2.88, z: -9.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3873,7 +3893,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5769b65676941c84aa67a07a113c0ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
