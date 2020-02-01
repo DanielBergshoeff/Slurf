@@ -16,8 +16,8 @@ public class Snot : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        CheckSuckable(collision.gameObject);
+    private void OnTriggerEnter(Collider other) {
+        CheckSuckable(other.gameObject);
         Destroy(gameObject);
     }
 
@@ -25,5 +25,11 @@ public class Snot : MonoBehaviour
         if (!go.CompareTag("Suckable"))
             return;
 
+        StickyPiece sp = go.GetComponent<StickyPiece>();
+        if (sp == null)
+            return;
+
+        sp.MakeSticky();
+        sp.GetComponent<Renderer>().material = GetComponent<Renderer>().material;
     }
 }
