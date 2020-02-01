@@ -5,25 +5,20 @@ class StickyPiece : MonoBehaviour, IStickable
 {
     public List<Transform> ConnectedPieces;
     public bool fixedJoint = false;
-
     private bool sticky = false;
     private bool dragging = false;
     private float distance;
     private Vector3 startDist;
 
-    /*private void OnMouseDown()
+    private void Awake()
     {
-        dragging = true;
-        MakeSticky();
-        distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector3 rayPoint = ray.GetPoint(distance);
-        startDist = transform.position - rayPoint;
-    }*/
+        if (GetComponent<MeshCollider>() == null)
+            gameObject.AddComponent<MeshCollider>().convex = true;
 
-    private void OnMouseUp()
-    {
-        dragging = false;
+        if (GetComponent<Rigidbody>() == null)
+            gameObject.AddComponent<Rigidbody>();
+
+        tag = "Suckable";
     }
 
     private void Update()
