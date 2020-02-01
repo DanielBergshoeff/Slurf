@@ -22,6 +22,7 @@ class StickyPiece : MonoBehaviour, IStickable
 
         myAudioSource = gameObject.AddComponent<AudioSource>();
         myAudioSource.volume = 0.25f;
+        tag = "Suckable";
     }
 
     private void Update()

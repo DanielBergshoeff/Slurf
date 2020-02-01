@@ -42,7 +42,7 @@ public class TrunkController : MonoBehaviour
     private bool triggerPressed = false;
     private bool sucking = false;
 
-    private Transform suckingItem = null;
+    public Transform suckingItem = null;
     private SuckPosition suckPositionScript;
 
     private AudioSource snotAudio;
