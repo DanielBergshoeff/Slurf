@@ -76,8 +76,8 @@ public class TrunkController : MonoBehaviour
         if (suckingItem == null)
             return;
 
-        suckingItem.GetComponent<Rigidbody>().useGravity = true;
-        suckingItem.GetComponent<Rigidbody>().isKinematic = false;
+        suckingItem.GetComponentInParent<Rigidbody>().useGravity = true;
+        suckingItem.GetComponentInParent<Rigidbody>().isKinematic = false;
         suckingItem.parent = null;
         suckingItem = null;
     }
@@ -123,8 +123,8 @@ public class TrunkController : MonoBehaviour
 
             if(Vector3.Distance(hit.collider.transform.position, suckPosition.position) < hit.collider.transform.localScale.x / 2f + 0.05f) {
                 suckingItem = hit.collider.transform;
-                suckingItem.GetComponent<Rigidbody>().useGravity = false;
-                suckingItem.GetComponent<Rigidbody>().isKinematic = true;
+                suckingItem.GetComponentInParent<Rigidbody>().useGravity = false;
+                suckingItem.GetComponentInParent<Rigidbody>().isKinematic = true;
                 suckingItem.parent = suckPosition;
             }
         }
