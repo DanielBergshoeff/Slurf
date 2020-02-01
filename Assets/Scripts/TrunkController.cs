@@ -10,9 +10,12 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private Transform trunkEnd;
     [SerializeField] private Transform suckPosition;
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float snotCoolDownTotal = 3f;
 
     [SerializeField] private InputAction triggerAction;
     [SerializeField] private InputAction suckingAction;
+
+    [SerializeField] private GameObject snotPrefab;
 
     private Rigidbody trunkPartRigidBody;
     private Rigidbody trunkEndRigidBody;
@@ -29,6 +32,8 @@ public class TrunkController : MonoBehaviour
     private bool sucking = false;
 
     private Transform suckingItem = null;
+
+    private float snotCoolDown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -80,13 +85,24 @@ public class TrunkController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateTrunkPosition();
+        Suck();
+        UpdateSnotCooldown();
+    }
+
+    private void UpdateSnotCooldown() {
+        if (snotCoolDown <= 0f)
+            return;
+
+        snotCoolDown -= Time.deltaTime;
+    }
+
+    private void UpdateTrunkPosition() {
         trunkPartRigidBody.velocity = transform.right * xAxis * speed + transform.forward * zAxis * speed;
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
-        if(triggerPressed)
+        if (triggerPressed)
             trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * 10f + trunkEnd.transform.forward * zAxisRotation * 10f);
-
-        Suck();
     }
 
     private void Suck() {
@@ -132,5 +148,16 @@ public class TrunkController : MonoBehaviour
     public void RotateTrunkEnd(InputAction.CallbackContext context) {
         if (triggerPressed)
             zAxisRotation = (float)context.ReadValueAsObject();
+    }   
+
+    public void ShootSnot(InputAction.CallbackContext context) {
+        if (snotCoolDown > 0f)
+            return;
+
+        snotCoolDown = snotCoolDownTotal;
+
+        GameObject snot = Instantiate(snotPrefab);
+        snot.GetComponent<Rigidbody>().AddForce(suckPosition.up * 500f);
+        snot.transform.position = suckPosition.position;
     }
 }
