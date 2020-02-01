@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 344389738}
   - component: {fileID: 344389742}
   - component: {fileID: 344389743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 344389737}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 395093310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 849512231}
   - component: {fileID: 849512230}
   - component: {fileID: 849512229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 935902836}
   - component: {fileID: 935902840}
   - component: {fileID: 935902841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1325,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 935902835}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -1694,7 +1694,7 @@ GameObject:
   - component: {fileID: 1061470792}
   - component: {fileID: 1061470797}
   - component: {fileID: 1061470796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1930,7 +1930,7 @@ GameObject:
   - component: {fileID: 1554234495}
   - component: {fileID: 1554234494}
   - component: {fileID: 1554234493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 1627282332}
   - component: {fileID: 1627282336}
   - component: {fileID: 1627282337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElephantPart4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1627282331}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
