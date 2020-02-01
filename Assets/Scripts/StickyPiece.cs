@@ -17,6 +17,8 @@ class StickyPiece : MonoBehaviour, IStickable
 
         if (GetComponent<Rigidbody>() == null)
             gameObject.AddComponent<Rigidbody>();
+
+        tag = "Suckable";
     }
 
     private void Update()
