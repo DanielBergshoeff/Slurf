@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class TrunkController : MonoBehaviour
-{
+public class TrunkController : MonoBehaviour {
     [SerializeField] private Transform trunkPart;
     [SerializeField] private Transform trunkEnd;
     [SerializeField] private Transform suckPosition;
@@ -32,12 +31,12 @@ public class TrunkController : MonoBehaviour
     private bool sucking = false;
 
     private Transform suckingItem = null;
+    private SuckPosition suckPositionScript;
 
     private float snotCoolDown = 0f;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
 
@@ -46,6 +45,22 @@ public class TrunkController : MonoBehaviour
 
         suckingAction.started += SuckingTrue;
         suckingAction.canceled += SuckingFalse;
+
+        suckPositionScript = suckPosition.GetComponent<SuckPosition>();
+        if (suckPositionScript.suckEvent == null)
+            suckPositionScript.suckEvent = new MyCollisionEvent();
+
+        suckPositionScript.suckEvent.AddListener(SuckPositionTouched);
+    }
+
+    private void SuckPositionTouched(Collider other) {
+        if (!sucking || suckingItem != null || other.GetComponent<StickyPiece>() == null)
+            return;
+
+        suckingItem = other.transform.GetComponentInParent<Rigidbody>().transform;
+        suckingItem.GetComponent<Rigidbody>().useGravity = false;
+        suckingItem.GetComponent<Rigidbody>().isKinematic = true;
+        suckingItem.parent = suckPosition;
     }
 
     private void OnEnable() {
@@ -73,11 +88,13 @@ public class TrunkController : MonoBehaviour
     private void SuckingFalse (InputAction.CallbackContext context) {
         sucking = false;
 
-        if (suckingItem == null)
+        if (suckingItem == null || suckingItem.parent != suckPosition) {
+            suckingItem = null;
             return;
+        }
 
-        suckingItem.GetComponentInParent<Rigidbody>().useGravity = true;
-        suckingItem.GetComponentInParent<Rigidbody>().isKinematic = false;
+        suckingItem.GetComponent<Rigidbody>().useGravity = true;
+        suckingItem.GetComponent<Rigidbody>().isKinematic = false;
         suckingItem.parent = null;
         suckingItem = null;
     }
@@ -120,13 +137,6 @@ public class TrunkController : MonoBehaviour
             
             Vector3 heading = (suckPosition.position - hit.collider.transform.position).normalized;
             hit.collider.transform.position = hit.collider.transform.position + heading * Time.deltaTime * 1f;
-
-            if(Vector3.Distance(hit.collider.transform.position, suckPosition.position) < hit.collider.transform.localScale.x / 2f + 0.05f) {
-                suckingItem = hit.collider.transform;
-                suckingItem.GetComponentInParent<Rigidbody>().useGravity = false;
-                suckingItem.GetComponentInParent<Rigidbody>().isKinematic = true;
-                suckingItem.parent = suckPosition;
-            }
         }
     }
 
