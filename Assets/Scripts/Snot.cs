@@ -8,6 +8,7 @@ public class Snot : MonoBehaviour
         CheckSuckable(other.gameObject);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().isKinematic = true;
+        TrunkController.Instance.SnotImpactSound();
         Destroy(GetComponent<Collider>());
         Invoke("DestroySelf", 2.0f);
     }

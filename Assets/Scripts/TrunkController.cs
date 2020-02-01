@@ -6,9 +6,14 @@ using UnityEngine.InputSystem;
 
 public class TrunkController : MonoBehaviour
 {
+    public static TrunkController Instance { get; private set; }
+
+    [Header("Trunk pieces")]
     [SerializeField] private Transform trunkPart;
     [SerializeField] private Transform trunkEnd;
     [SerializeField] private Transform suckPosition;
+
+    [Header("Variables")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float snotCoolDownTotal = 3f;
@@ -20,6 +25,12 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private GameObject snotPrefab;
     [SerializeField] private GameObject snotMuzzlePrefab;
     [SerializeField] private int trunkLayer;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip audioSnotShoot;
+    [SerializeField] private AudioClip audioSnotImpact;
+    [SerializeField] private AudioClip audioSnotTouch;
+    [SerializeField] private AudioClip audioSucking;
 
     private Rigidbody trunkPartRigidBody;
     private Rigidbody trunkEndRigidBody;
@@ -38,10 +49,15 @@ public class TrunkController : MonoBehaviour
     private Transform suckingItem = null;
     private SuckPosition suckPositionScript;
 
+    private AudioSource snotAudio;
+    private AudioSource suckAudio;
+
     private float snotCoolDown = 0f;
 
     private void Start()
     {
+        Instance = this;
+
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
 
@@ -56,6 +72,9 @@ public class TrunkController : MonoBehaviour
             suckPositionScript.suckEvent = new MyCollisionEvent();
 
         suckPositionScript.suckEvent.AddListener(SuckPositionTouched);
+
+        snotAudio = gameObject.AddComponent<AudioSource>();
+        suckAudio = gameObject.AddComponent<AudioSource>();
     }
 
     private void SuckPositionTouched(Collider other)
@@ -95,11 +114,15 @@ public class TrunkController : MonoBehaviour
     private void SuckingTrue(InputAction.CallbackContext context)
     {
         sucking = true;
+        suckAudio.clip = audioSucking;
+        suckAudio.loop = true;
+        suckAudio.Play();
     }
 
     private void SuckingFalse(InputAction.CallbackContext context)
     {
         sucking = false;
+        suckAudio.Stop();
 
         if (suckingItem == null || suckingItem.parent != suckPosition)
         {
@@ -188,6 +211,7 @@ public class TrunkController : MonoBehaviour
             return;
 
         snotCoolDown = snotCoolDownTotal;
+        snotAudio.PlayOneShot(audioSnotShoot);
 
         GameObject snot = Instantiate(snotPrefab);
         snot.GetComponent<Rigidbody>().AddForce(suckPosition.up * snotForce);
@@ -196,5 +220,13 @@ public class TrunkController : MonoBehaviour
         GameObject snotMuzzle = Instantiate(snotMuzzlePrefab);
         snotMuzzle.transform.position = suckPosition.position;
         snotMuzzle.transform.rotation = Quaternion.LookRotation(suckPosition.up);
+    }
+
+    public void SnotImpactSound() {
+        snotAudio.PlayOneShot(audioSnotImpact);
+    }
+
+    public void SnotTouchSound() {
+        snotAudio.PlayOneShot(audioSnotTouch);
     }
 }
