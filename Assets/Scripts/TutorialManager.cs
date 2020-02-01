@@ -15,9 +15,11 @@ public class TutorialManager : MonoBehaviour
     private bool sucking;
     private bool triggerPressed = false;
     private float endAxis;
+    private TrunkController controller;
 
     private void Awake()
     {
+        controller = FindObjectOfType<TrunkController>();
         suckingAction.started += SuckingTrue;
         triggerAction.started += TriggerPressedTrue;
 
@@ -55,21 +57,21 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 3:
-                if (sucking) // needs a suck
+                if (sucking && controller.suckingItem != null)
                 {
                     busy = true;
                     Invoke("ShowTutorial", 2f);
                 }
                 break;
             case 4:
-                if (xAxisRotation > 0) //move the snoot only
+                if (xAxisRotation > 0)
                 {
                     busy = true;
                     Invoke("ShowTutorial", 2f);
                 }
                 break;
             case 5:
-                if (snotShooted) //shoot snot
+                if (snotShooted)
                 {
                     busy = true;
                     Invoke("ShowTutorial", 2f);
@@ -96,7 +98,10 @@ public class TutorialManager : MonoBehaviour
 
 
     public void ShootSnot(InputAction.CallbackContext context)
-    { snotShooted = true; }
+    {
+        if (currentTutorial > 4)
+            snotShooted = true;
+    }
 
     private void SuckingTrue(InputAction.CallbackContext context)
     { sucking = true; }
@@ -105,7 +110,6 @@ public class TutorialManager : MonoBehaviour
     {
         suckingAction.Enable();
         triggerAction.Enable();
-
     }
 
     private void OnDisable()
