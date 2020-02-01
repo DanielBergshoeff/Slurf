@@ -112,6 +112,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c87a5423-6ffb-41a7-8ecc-cfe20f31fe3b",
+                    "path": "<DualShock4GampadiOS>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "71ec2634-4b8f-43a4-83f7-435fd0c4ab71",
                     "path": "<XInputController>/rightStick/x",
                     "interactions": "",
@@ -123,8 +134,30 @@
                 },
                 {
                     "name": "",
+                    "id": "89d9159d-5b88-485d-83e5-d81fa0f5ef5a",
+                    "path": "<DualShock4GampadiOS>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunkZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fbe0318d-424c-43b3-899b-47ebc377e776",
                     "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootSnot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c08f037-c339-48d8-9ae4-0217f5119439",
+                    "path": "<DualShock4GampadiOS>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
