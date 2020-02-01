@@ -15,4 +15,6 @@ public class AudioManager : MonoBehaviour
     }
      
     public List<AudioClip> AudioStickyPieceTouch;
+    public AudioClip AudioSnotImpact;
+    public AudioClip AudioSnotTouch;
 }

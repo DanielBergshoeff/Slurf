@@ -55,7 +55,7 @@ class StickyPiece : MonoBehaviour, IStickable
         Destroy(sp.GetComponent<Rigidbody>());
         sp.fixedJoint = true;
 
-        TrunkController.Instance.SnotTouchSound();
+        myAudioSource.PlayOneShot(AudioManager.Instance.AudioSnotTouch);
     }
 
     public void MakeSticky()

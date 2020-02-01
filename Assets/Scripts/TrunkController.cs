@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class TrunkController : MonoBehaviour
 {
-    public static TrunkController Instance { get; private set; }
-
     [Header("Trunk pieces")]
     [SerializeField] private Transform trunkPart;
     [SerializeField] private Transform trunkEnd;
@@ -28,8 +26,6 @@ public class TrunkController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip audioSnotShoot;
-    [SerializeField] private AudioClip audioSnotImpact;
-    [SerializeField] private AudioClip audioSnotTouch;
     [SerializeField] private AudioClip audioSucking;
 
     private Rigidbody trunkPartRigidBody;
@@ -56,8 +52,6 @@ public class TrunkController : MonoBehaviour
 
     private void Start()
     {
-        Instance = this;
-
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
 
@@ -220,13 +214,5 @@ public class TrunkController : MonoBehaviour
         GameObject snotMuzzle = Instantiate(snotMuzzlePrefab);
         snotMuzzle.transform.position = suckPosition.position;
         snotMuzzle.transform.rotation = Quaternion.LookRotation(suckPosition.up);
-    }
-
-    public void SnotImpactSound() {
-        snotAudio.PlayOneShot(audioSnotImpact);
-    }
-
-    public void SnotTouchSound() {
-        snotAudio.PlayOneShot(audioSnotTouch);
     }
 }
