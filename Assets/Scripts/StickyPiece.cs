@@ -39,9 +39,10 @@ class StickyPiece : MonoBehaviour, IStickable
     {
         if (collision.transform.GetComponent<IStickable>() == null) { return; }
 
-        if (!sticky) { return; }
-
         if (ConnectedPieces.Contains(collision.transform))
+            return;
+
+        if (!collision.GetContact(0).thisCollider.GetComponent<StickyPiece>().sticky)
             return;
 
         StickyPiece sp = collision.gameObject.GetComponent<StickyPiece>();
