@@ -68,17 +68,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d5445226-fa67-4368-939d-9ff87bc59be7",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveTrunkXAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "16ecbfe9-9e25-4cf2-93df-344115030a06",
                     "path": "<XInputController>/leftStick/y",
                     "interactions": "",
@@ -90,10 +79,10 @@
                 },
                 {
                     "name": "",
-                    "id": "cc80d127-e014-4101-bd54-3b7852eccf74",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
+                    "id": "d5445226-fa67-4368-939d-9ff87bc59be7",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Invert",
                     "groups": "",
                     "action": "MoveTrunkZAxis",
                     "isComposite": false,
@@ -113,7 +102,7 @@
                 {
                     "name": "",
                     "id": "b03ee25b-8750-492f-ade3-8829b9d32b38",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -151,6 +140,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShootSnot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc80d127-e014-4101-bd54-3b7852eccf74",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkXAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
