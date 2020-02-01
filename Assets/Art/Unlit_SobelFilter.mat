@@ -7,9 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Wood
-  m_Shader: {fileID: -6465566751694194690, guid: ce116103ebaa25444915ef8359f21370,
-    type: 3}
+  m_Name: Unlit_SobelFilter
+  m_Shader: {fileID: 4800000, guid: ed60f02b8eacdbf4f8c28ecc2a32eb1f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,18 +19,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_3A187C86:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_355EB823: 0.02
-    - Vector1_78361C67: 8.69
-    - Vector1_B4C90ACE: 0.85
-    - Vector1_C4792696: 25.29
-    - Vector1_F4F5A38D: 1
-    m_Colors:
-    - Color_25F999C9: {r: 0.5283019, g: 0.45801115, b: 0.43609828, a: 0}
-    - Color_39063C41: {r: 0.7264151, g: 0.6300866, b: 0.44201672, a: 0}
-    - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
-    - _WorldSpaceLightPos: {r: 0, g: 0, b: 0, a: 0}
+    - _Delta: 0.001
+    - _Poseterize: 0
+    - _PosterizationCount: 8
+    - _Raw: 0
+    m_Colors: []
