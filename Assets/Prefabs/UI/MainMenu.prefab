@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 347297443844639233}
   - component: {fileID: 5278273416331328986}
   - component: {fileID: 7872952603358070213}
+  - component: {fileID: 5102629176993673330}
   - component: {fileID: 5809743526295917335}
   - component: {fileID: 5694496678753424774}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Story
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,6 +77,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 4.4
+--- !u!114 &5102629176993673330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904908698762019629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b582c3b838c98418a45d5243b1ee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionUI: {fileID: 0}
+  transitionOffset: 2
+  transitionInAudio: {fileID: 0}
+  transitionOutAudio: {fileID: 0}
 --- !u!114 &5809743526295917335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +135,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7872952603358070213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5102629176993673330}
+        m_MethodName: set_interacted
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5694496678753424774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,10 +811,11 @@ GameObject:
   - component: {fileID: 5899388454438241574}
   - component: {fileID: 9125488283142777337}
   - component: {fileID: 4141937450504015894}
+  - component: {fileID: 8118140945305450970}
   - component: {fileID: 5525723788785713615}
   - component: {fileID: 293940159249159408}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,6 +877,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 4.4
+--- !u!114 &8118140945305450970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814343441100307368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b582c3b838c98418a45d5243b1ee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionUI: {fileID: 0}
+  transitionOffset: 2
+  transitionInAudio: {fileID: 0}
+  transitionOutAudio: {fileID: 0}
 --- !u!114 &5525723788785713615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +935,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4141937450504015894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8118140945305450970}
+        m_MethodName: set_interacted
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &293940159249159408
 MonoBehaviour:
   m_ObjectHideFlags: 0
