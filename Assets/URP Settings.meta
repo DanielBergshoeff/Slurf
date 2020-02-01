@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 0f1a457bef69f754f8ad566dbf274f22
 =======
 guid: 76bb87833a42df74b9a3fce72581c72d
 >>>>>>> Particles
+=======
+guid: 0f1a457bef69f754f8ad566dbf274f22
+>>>>>>> develop
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
