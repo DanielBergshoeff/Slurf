@@ -28,6 +28,30 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "RotateTrunk",
+                    "type": "Button",
+                    "id": "a79fb7e0-8cc0-4008-b808-2800944a5e70",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateTrunkZ",
+                    "type": "Value",
+                    "id": "72835227-0135-4b21-aa16-0e30a74141fc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ShootSnot",
+                    "type": "Button",
+                    "id": "7fad6c47-dac7-4c25-b215-55cfacecc5c5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -35,6 +59,17 @@
                     "name": "",
                     "id": "0de8462a-922d-40b6-82d8-abed9645658a",
                     "path": "<XInputController>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5445226-fa67-4368-939d-9ff87bc59be7",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -55,12 +90,67 @@
                 },
                 {
                     "name": "",
+                    "id": "cc80d127-e014-4101-bd54-3b7852eccf74",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkZAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4807dd61-0496-4fb2-ac99-f580491c6c5f",
                     "path": "<XInputController>/rightStick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "MoveTrunkEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b03ee25b-8750-492f-ade3-8829b9d32b38",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrunkEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d635785-31d4-4442-bb61-1814935a700a",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71ec2634-4b8f-43a4-83f7-435fd0c4ab71",
+                    "path": "<XInputController>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateTrunkZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbe0318d-424c-43b3-899b-47ebc377e776",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootSnot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
