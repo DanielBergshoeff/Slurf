@@ -1270,6 +1270,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrunkController
       objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: triggerAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: triggerAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XInputController>/leftTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: triggerAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: f0847ab9-767a-4692-b02a-d2b157650b95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: triggerAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: triggerAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <DualShockGamepad>/leftTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: cf3ffa1a-478c-4a3e-861e-1f779a7df107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Sucking
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <DualShockGamepad>/rightTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 6555159491095124054, guid: fe6ab126be5a98442a39312cde92b653,
         type: 3}
       propertyPath: m_LocalPosition.x

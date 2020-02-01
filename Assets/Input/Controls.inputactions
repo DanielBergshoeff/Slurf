@@ -102,7 +102,7 @@
                 {
                     "name": "",
                     "id": "4d635785-31d4-4442-bb61-1814935a700a",
-                    "path": "<XInputController>/leftShoulder",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -113,7 +113,7 @@
                 {
                     "name": "",
                     "id": "c87a5423-6ffb-41a7-8ecc-cfe20f31fe3b",
-                    "path": "<DualShock4GampadiOS>/leftTrigger",
+                    "path": "<DualShockGamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -135,7 +135,7 @@
                 {
                     "name": "",
                     "id": "89d9159d-5b88-485d-83e5-d81fa0f5ef5a",
-                    "path": "<DualShock4GampadiOS>/rightStick/x",
+                    "path": "<DualShockGamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -157,7 +157,7 @@
                 {
                     "name": "",
                     "id": "4c08f037-c339-48d8-9ae4-0217f5119439",
-                    "path": "<DualShock4GampadiOS>/rightTrigger",
+                    "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
