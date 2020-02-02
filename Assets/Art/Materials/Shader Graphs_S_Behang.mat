@@ -32,6 +32,7 @@ Material:
     - Boolean_3349BDAB: 0
     - Vector1_355EB823: 0
     - Vector1_52B144C: 0.4
+    - Vector1_6D2592E: 0.65
     - Vector1_78361C67: 0
     - Vector1_B4C90ACE: 0
     - Vector1_C4792696: 24.1
@@ -43,3 +44,4 @@ Material:
     - Color_95B9DC2E: {r: 0.34082413, g: 0.4061123, b: 0.6509434, a: 0}
     - Color_97BBDFFA: {r: 0.34117648, g: 0.40784314, b: 0.6509804, a: 0}
     - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_1ABAA5FB: {r: 0, g: 0.15, b: 0, a: 0}

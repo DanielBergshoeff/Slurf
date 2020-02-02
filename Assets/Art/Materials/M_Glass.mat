@@ -32,6 +32,7 @@ Material:
     - Boolean_3349BDAB: 0
     - Vector1_355EB823: 0.05
     - Vector1_52B144C: 1
+    - Vector1_6D2592E: 1
     - Vector1_78361C67: 8.69
     - Vector1_B4C90ACE: 0.85
     - Vector1_C4792696: 1.35
@@ -39,6 +40,7 @@ Material:
     m_Colors:
     - Color_25F999C9: {r: 0.70980394, g: 0.77553815, b: 0.85882354, a: 0}
     - Color_39063C41: {r: 1, g: 1, b: 1, a: 0}
-    - Color_97BBDFFA: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
+    - Color_97BBDFFA: {r: 0.6053756, g: 0.6591116, b: 0.7169812, a: 0}
     - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_1ABAA5FB: {r: 0, g: 0, b: 0, a: 0}
     - _WorldSpaceLightPos: {r: 0, g: 0, b: 0, a: 0}
