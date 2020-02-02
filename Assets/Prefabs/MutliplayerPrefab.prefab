@@ -472,6 +472,16 @@ PrefabInstance:
       propertyPath: triggerAction.m_SingletonActionBindings.Array.data[0].m_Id
       value: f0847ab9-767a-4692-b02a-d2b157650b95
       objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: cf3ffa1a-478c-4a3e-861e-1f779a7df107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
+        type: 3}
+      propertyPath: suckingAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <DualShockGamepad>/rightTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 6555159491095124054, guid: fe6ab126be5a98442a39312cde92b653,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -893,11 +903,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
         type: 3}
-      propertyPath: suckingAction.m_SingletonActionBindings.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
-        type: 3}
       propertyPath: triggerAction.m_SingletonActionBindings.Array.data[0].m_Path
       value: <XInputController>/leftTrigger
       objectReference: {fileID: 0}
@@ -973,11 +978,6 @@ PrefabInstance:
       propertyPath: generalTouch
       value: 
       objectReference: {fileID: 8300000, guid: 08309b70051585f44a8a8db60d39c268, type: 3}
-    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
-        type: 3}
-      propertyPath: audioSucking
-      value: 
-      objectReference: {fileID: 8300000, guid: cf3e742e82d5c63448cea82c20d3e44d, type: 3}
     - target: {fileID: 6555159491095124054, guid: fe6ab126be5a98442a39312cde92b653,
         type: 3}
       propertyPath: m_LocalPosition.x
