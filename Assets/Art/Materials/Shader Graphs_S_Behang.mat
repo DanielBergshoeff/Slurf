@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_S_Behang
-  m_Shader: {fileID: -6465566751694194690, guid: ce116103ebaa25444915ef8359f21370,
+  m_Shader: {fileID: -6465566751694194690, guid: e5b7ce93c99663643a7842e32f3400ec,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3A187C86:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5fc91fd7e60119a409d83dd0d61ef4b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_A6CEBFE7_Texture_1:
@@ -37,8 +37,9 @@ Material:
     - Vector1_C4792696: 24.1
     - Vector1_F4F5A38D: 1
     m_Colors:
-    - Color_25F999C9: {r: 0.7264151, g: 0.19530971, b: 0.19530971, a: 0}
+    - Color_25F999C9: {r: 0.754717, g: 0.6229975, b: 0.6229975, a: 0}
     - Color_32BC6390: {r: 0.47009063, g: 0.41162336, b: 0.6981132, a: 0}
-    - Color_39063C41: {r: 0.34117648, g: 0.40784314, b: 0.6509804, a: 0}
+    - Color_39063C41: {r: 0.43943575, g: 0.505251, b: 0.745283, a: 0}
     - Color_95B9DC2E: {r: 0.34082413, g: 0.4061123, b: 0.6509434, a: 0}
+    - Color_97BBDFFA: {r: 0.34117648, g: 0.40784314, b: 0.6509804, a: 0}
     - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
