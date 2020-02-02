@@ -70,7 +70,7 @@ class StickyPiece : MonoBehaviour, IStickable
     {
         if (ConnectedPieces.Count == parts - 1 && tutorialDone)
         {
-            Score.Instance.ShowScore("Lvl - 1.0");
+            Score.Instance.ShowScore("Lvl - 2");
             Destroy(this);
         }
     }

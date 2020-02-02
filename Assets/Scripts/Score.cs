@@ -34,5 +34,7 @@ public class Score : MonoBehaviour
         }
         GameObject gameObject1 = Instantiate(scoreBord, transform1);
         gameObject1.GetComponentInChildren<Button>().name = s;
+        FindObjectOfType<SceneLoader>().Interact();
+
     }
 }
