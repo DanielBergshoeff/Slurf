@@ -2315,11 +2315,6 @@ PrefabInstance:
       propertyPath: triggerAction.m_SingletonActionBindings.Array.data[0].m_Id
       value: f0847ab9-767a-4692-b02a-d2b157650b95
       objectReference: {fileID: 0}
-    - target: {fileID: 6555159491095124053, guid: fe6ab126be5a98442a39312cde92b653,
-        type: 3}
-      propertyPath: audioSucking
-      value: 
-      objectReference: {fileID: 8300000, guid: cea13fe2994360747bf48450e42eeb9d, type: 3}
     - target: {fileID: 6555159491095124054, guid: fe6ab126be5a98442a39312cde92b653,
         type: 3}
       propertyPath: m_LocalPosition.x
