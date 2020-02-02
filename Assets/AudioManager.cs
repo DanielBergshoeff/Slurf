@@ -1,19 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
+    private static AudioManager mInstance;
 
-    private void Awake() {
-        Instance = this;
+    public static AudioManager Instance
+    {
+        get
+        {
+            if (mInstance == null)
+            {
+                GameObject go = new GameObject();
+                mInstance = go.AddComponent<AudioManager>();
+            }
+            return mInstance;
+        }
     }
 
-    public AudioClip GetSingleAudioClipTouch() {
+    private void Awake()
+    {
+        mInstance = this;
+    }
+
+    public AudioClip GetSingleAudioClipTouch()
+    {
         return AudioStickyPieceTouch[Random.Range(0, AudioStickyPieceTouch.Count)];
     }
-     
+
     public List<AudioClip> AudioStickyPieceTouch;
     public AudioClip AudioSnotImpact;
     public AudioClip AudioSnotTouch;
