@@ -9,6 +9,8 @@ public class ShowTutorial : MonoBehaviour
 
     public UnityEvent reset;
 
+    private bool innit = false;
+
     private int _playersDone;
     public int playersDone
     {
@@ -16,26 +18,26 @@ public class ShowTutorial : MonoBehaviour
         set
         {
             _playersDone += value;
-            if (_playersDone < 2) return;
+            if (_playersDone <= 2) return;
 
             Show();
             _playersDone = 0;
         }
     }
 
-    private void Awake()
+    private void Update()
     {
-        Show();
+        if (FindObjectOfType<TutorialManager>() != null && !innit)
+        { Show(); innit = true; }
     }
 
     private void Show()
     {
-        print("Show next");
         if (transform.childCount > 0)
             Destroy(transform.GetChild(0).gameObject);
 
         Instantiate(tutorials[currentTutorial], transform);
-        reset.Invoke();
         currentTutorial++;
+        reset.Invoke();
     }
 }

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -18,29 +19,41 @@ public class TutorialManager : MonoBehaviour
     private bool triggerPressed = false;
     private float endAxis;
     private TrunkController controller;
+    private string name1;
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        { Destroy(this); }
+
+        if (FindObjectsOfType<TutorialManager>().Length == 1)
+            gameObject.name += "1";
+        else
+            gameObject.name += "2";
+
         controller = FindObjectOfType<TrunkController>();
         tutorialShower = FindObjectOfType<ShowTutorial>();
-        tutorialShower.reset.AddListener(StepDone);
+        tutorialShower.reset.AddListener(ResetCheckmark);
         suckingAction.started += SuckingTrue;
         triggerAction.started += TriggerPressedTrue;
+        name1 = "Check" + gameObject.name.Last();
     }
 
     private void Start()
     {
-        string name1 = "Check" + gameObject.name.Last();
-        checkMark = GameObject.Find(name1);
-        checkMark.SetActive(false);
+        ResetCheckmark();
     }
 
-    private void StepDone()
+    private void ResetCheckmark()
     {
-        string name1 = "Check" + gameObject.name.Last();
-        checkMark = GameObject.Find(name1);
+        GetCheckMark();
         checkMark.SetActive(false);
         busy = false;
+    }
+
+    private void GetCheckMark()
+    {
+        checkMark = GameObject.Find(name1);
     }
 
     private void Update()
@@ -51,30 +64,35 @@ public class TutorialManager : MonoBehaviour
             case 1:
                 if (xAxis > 0 && zAxis > 0)
                 {
+                    busy = true;
                     Invoke("DidTutorial", 2f);
                 }
                 break;
             case 2:
                 if (endAxis > 0)
                 {
+                    busy = true;
                     Invoke("DidTutorial", 2f);
                 }
                 break;
             case 3:
                 if (sucking && controller.suckingItem != null)
                 {
+                    busy = true;
                     Invoke("DidTutorial", 2f);
                 }
                 break;
             case 4:
                 if (xAxisRotation > 0)
                 {
+                    busy = true;
                     Invoke("DidTutorial", 2f);
                 }
                 break;
             case 5:
                 if (snotShooted)
                 {
+                    busy = true;
                     Invoke("DidTutorial", 2f);
                 }
                 break;
@@ -85,7 +103,8 @@ public class TutorialManager : MonoBehaviour
 
     private void DidTutorial()
     {
-        busy = true;
+        if (checkMark == null)
+            GetCheckMark();
         checkMark.SetActive(true);
         tutorialShower.playersDone++;
         currentTutorial++;

@@ -51,7 +51,7 @@ public class TrunkController : MonoBehaviour
 
     private float snotCoolDown = 0f;
 
-    private void Start()
+    private void Awake()
     {
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
@@ -71,11 +71,14 @@ public class TrunkController : MonoBehaviour
         snotAudio = gameObject.AddComponent<AudioSource>();
         suckAudio = gameObject.AddComponent<AudioSource>();
 
-        if(MultiplayerSpawn.Instance != null) {
-            if(MultiplayerSpawn.Instance.amtOfPlayers == 1) {
+        if (MultiplayerSpawn.Instance != null)
+        {
+            if (MultiplayerSpawn.Instance.amtOfPlayers == 1)
+            {
                 transform.position = MultiplayerSpawn.Instance.Player1Position.position;
             }
-            else {
+            else
+            {
                 transform.position = MultiplayerSpawn.Instance.Player2Position.position;
             }
         }
@@ -158,11 +161,13 @@ public class TrunkController : MonoBehaviour
         snotCoolDown -= Time.deltaTime;
     }
 
-    private void UpdateTrunkPosition() {
+    private void UpdateTrunkPosition()
+    {
         trunkPartRigidBody.velocity = transform.right * xAxis * speed + transform.forward * zAxis * speed;
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
-        if (triggerPressed) {
+        if (triggerPressed)
+        {
             //trunkEnd.RotateAround(-Camera.main.transform.right * xAxisRotation * rotateSpeed + Camera.main.transform.forward * zAxisRotation * rotateSpeed);
             trunkEnd.RotateAround(trunkEnd.position, -Vector3.forward, xAxisRotation * rotateSpeed);
             trunkEnd.RotateAround(trunkEnd.position, Vector3.up, zAxisRotation * rotateSpeed);
