@@ -16,6 +16,7 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float snotCoolDownTotal = 3f;
     [SerializeField] private float snotForce = 250f;
+    [SerializeField] private float suckingForce = 2.0f;
 
     [SerializeField] private InputAction triggerAction;
     [SerializeField] private InputAction suckingAction;
@@ -110,7 +111,7 @@ public class TrunkController : MonoBehaviour
         sucking = true;
         suckAudio.clip = audioSucking;
         suckAudio.loop = true;
-        suckAudio.Play();
+        //suckAudio.Play();
     }
 
     private void SuckingFalse(InputAction.CallbackContext context)
@@ -146,13 +147,15 @@ public class TrunkController : MonoBehaviour
         snotCoolDown -= Time.deltaTime;
     }
 
-    private void UpdateTrunkPosition()
-    {
+    private void UpdateTrunkPosition() {
         trunkPartRigidBody.velocity = transform.right * xAxis * speed + transform.forward * zAxis * speed;
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
-        if (triggerPressed)
-            trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * rotateSpeed + trunkEnd.transform.forward * zAxisRotation * rotateSpeed);
+        if (triggerPressed) {
+            //trunkEnd.RotateAround(-Camera.main.transform.right * xAxisRotation * rotateSpeed + Camera.main.transform.forward * zAxisRotation * rotateSpeed);
+            trunkEnd.RotateAround(trunkEnd.position, -Vector3.forward, xAxisRotation * rotateSpeed);
+            trunkEnd.RotateAround(trunkEnd.position, Vector3.up, zAxisRotation * rotateSpeed);
+        }
     }
 
     private void Suck()
@@ -165,13 +168,14 @@ public class TrunkController : MonoBehaviour
 
         RaycastHit hit;
         Debug.DrawRay(trunkEnd.transform.position, trunkEnd.transform.up * 100f);
-        if (Physics.Raycast(trunkEnd.transform.position, trunkEnd.transform.up, out hit, 100f))
+        if (Physics.Raycast(trunkEnd.transform.position, trunkEnd.transform.up, out hit, 100f, ~(1 << trunkLayer)))
         {
             if (!hit.collider.CompareTag("Suckable"))
                 return;
 
-            Vector3 heading = (suckPosition.position - hit.collider.transform.position).normalized;
-            hit.collider.transform.position = hit.collider.transform.position + heading * Time.deltaTime * 1f;
+            Rigidbody rb = hit.collider.GetComponentInParent<Rigidbody>();
+            Vector3 heading = (suckPosition.position - rb.transform.position).normalized;
+            rb.MovePosition(rb.transform.position + heading * Time.deltaTime * suckingForce);
         }
     }
 
