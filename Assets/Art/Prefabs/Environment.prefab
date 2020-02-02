@@ -1066,7 +1066,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8113208, g: 0.69404155, b: 0.6697223, a: 1}
+  m_Color: {r: 1, g: 0.96976405, b: 0.8537736, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -6119,7 +6119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482327128530432964
 Transform:
   m_ObjectHideFlags: 0
@@ -6385,7 +6385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482327128572183600
 Transform:
   m_ObjectHideFlags: 0
@@ -6464,7 +6464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482327128636723884
 Transform:
   m_ObjectHideFlags: 0
@@ -8281,6 +8281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_Cup1
       objectReference: {fileID: 0}
+    - target: {fileID: 4339644196344886463, guid: 83e5b0cbc01d8b547943638960673964,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7263547043677038612, guid: 83e5b0cbc01d8b547943638960673964,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8715,6 +8720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pref_Cup1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339644196344886463, guid: 83e5b0cbc01d8b547943638960673964,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7263547043677038612, guid: 83e5b0cbc01d8b547943638960673964,
         type: 3}
@@ -10621,6 +10631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_Vase3
       objectReference: {fileID: 0}
+    - target: {fileID: 950527672108922258, guid: c74797ec65d62af41a8b157bdfb21383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6742737480194308892, guid: c74797ec65d62af41a8b157bdfb21383,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11671,6 +11686,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_Table (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2181121200032094155, guid: ec4deaf99d274144d912ac70a3fd7fc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5333984207393875560, guid: ec4deaf99d274144d912ac70a3fd7fc2,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -12526,6 +12546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_Vase2
       objectReference: {fileID: 0}
+    - target: {fileID: 6214910817508681818, guid: 74c1a24246b3b5244b2afb6a8b0f4d2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c1a24246b3b5244b2afb6a8b0f4d2d, type: 3}
 --- !u!4 &6669556837547032721 stripped
@@ -13095,6 +13120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pref_Vase2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214910817508681818, guid: 74c1a24246b3b5244b2afb6a8b0f4d2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c1a24246b3b5244b2afb6a8b0f4d2d, type: 3}
@@ -14470,6 +14500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pref_Table (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2181121200032094155, guid: ec4deaf99d274144d912ac70a3fd7fc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5333984207393875560, guid: ec4deaf99d274144d912ac70a3fd7fc2,
         type: 3}
