@@ -684,8 +684,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: cf3ffa1a-478c-4a3e-861e-1f779a7df107
-      m_Path: <DualShockGamepad>/rightTrigger
+      m_Id: c69ddf7e-b9ed-4dd2-96ca-8ceec2a8ca28
+      m_Path: <XInputController>/rightTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 
