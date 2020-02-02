@@ -10,6 +10,8 @@ class StickyPiece : MonoBehaviour, IStickable
     private float distance;
     private Vector3 startDist;
 
+    private AudioSource myAudioSource;
+
     private void Awake()
     {
         if (GetComponent<MeshCollider>() == null)
@@ -18,6 +20,8 @@ class StickyPiece : MonoBehaviour, IStickable
         if (GetComponent<Rigidbody>() == null)
             gameObject.AddComponent<Rigidbody>();
 
+        myAudioSource = gameObject.AddComponent<AudioSource>();
+        myAudioSource.volume = 0.25f;
         tag = "Suckable";
     }
 
@@ -32,6 +36,8 @@ class StickyPiece : MonoBehaviour, IStickable
 
     private void OnCollisionEnter(Collision collision)
     {
+        myAudioSource.PlayOneShot(AudioManager.Instance.GetSingleAudioClipTouch());
+
         if (collision.transform.GetComponent<IStickable>() == null) { return; }
 
         if (ConnectedPieces.Contains(collision.transform))
@@ -49,6 +55,8 @@ class StickyPiece : MonoBehaviour, IStickable
         sp.transform.parent = transform;
         Destroy(sp.GetComponent<Rigidbody>());
         sp.fixedJoint = true;
+
+        myAudioSource.PlayOneShot(AudioManager.Instance.AudioSnotTouch);
     }
 
     public void MakeSticky()
