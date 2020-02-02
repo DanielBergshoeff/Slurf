@@ -146,13 +146,15 @@ public class TrunkController : MonoBehaviour
         snotCoolDown -= Time.deltaTime;
     }
 
-    private void UpdateTrunkPosition()
-    {
+    private void UpdateTrunkPosition() {
         trunkPartRigidBody.velocity = transform.right * xAxis * speed + transform.forward * zAxis * speed;
         trunkEndRigidBody.velocity += transform.up * endAxis * speed;
 
-        if (triggerPressed)
-            trunkEnd.Rotate(-trunkEnd.transform.right * xAxisRotation * rotateSpeed + trunkEnd.transform.forward * zAxisRotation * rotateSpeed);
+        if (triggerPressed) {
+            //trunkEnd.RotateAround(-Camera.main.transform.right * xAxisRotation * rotateSpeed + Camera.main.transform.forward * zAxisRotation * rotateSpeed);
+            trunkEnd.RotateAround(trunkEnd.position, -Vector3.right, xAxisRotation * rotateSpeed);
+            trunkEnd.RotateAround(trunkEnd.position, Vector3.up, zAxisRotation * rotateSpeed);
+        }
     }
 
     private void Suck()

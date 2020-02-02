@@ -709,7 +709,7 @@ MonoBehaviour:
   trunkEnd: {fileID: 7891957727753251307}
   suckPosition: {fileID: 6555159490858085415}
   speed: 2
-  rotateSpeed: 5
+  rotateSpeed: 1
   snotCoolDownTotal: 1
   snotForce: 250
   triggerAction:
@@ -750,6 +750,7 @@ MonoBehaviour:
   trunkLayer: 0
   audioSnotShoot: {fileID: 0}
   audioSucking: {fileID: 0}
+  suckingItem: {fileID: 0}
 --- !u!114 &6555159491095124042
 MonoBehaviour:
   m_ObjectHideFlags: 0
