@@ -697,7 +697,7 @@ MonoBehaviour:
     type: 3}
   trunkLayer: 8
   audioSnotShoot: {fileID: 8300000, guid: 5a888fcbb4a60c044b39d45c7a4633e6, type: 3}
-  audioSucking: {fileID: 8300000, guid: cf3e742e82d5c63448cea82c20d3e44d, type: 3}
+  audioSucking: {fileID: 8300000, guid: cea13fe2994360747bf48450e42eeb9d, type: 3}
   suckingItem: {fileID: 0}
 --- !u!114 &6555159491095124042
 MonoBehaviour:
@@ -804,6 +804,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7fad6c47-dac7-4c25-b215-55cfacecc5c5
     m_ActionName: Player1/ShootSnot[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f954fa3-d1bd-459e-a62e-75d8187aefb8
+    m_ActionName: Player2/MoveTrunkXAxis
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b75fb520-77eb-4980-9026-8de3c32e04c6
+    m_ActionName: Player2/MoveTrunkZAxis
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0639fa5c-02f8-4f9d-8ee0-c054485a8449
+    m_ActionName: Player2/MoveTrunkEnd
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ead2b6ff-ba8f-45ba-8114-8a171165de6d
+    m_ActionName: Player2/RotateTrunk
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e5cfae0f-351d-448d-af0c-af1a81636173
+    m_ActionName: Player2/RotateTrunkZ
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e76b8c2-7409-4778-be18-278c4f4cf898
+    m_ActionName: Player2/ShootSnot
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1

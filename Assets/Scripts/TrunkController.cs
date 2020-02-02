@@ -111,13 +111,15 @@ public class TrunkController : MonoBehaviour
         sucking = true;
         suckAudio.clip = audioSucking;
         suckAudio.loop = true;
-        //suckAudio.Play();
+        suckAudio.Play();
+        suckAudio.volume = 0.1f;
     }
 
     private void SuckingFalse(InputAction.CallbackContext context)
     {
         sucking = false;
         suckAudio.Stop();
+        suckAudio.volume = 1.0f;
 
         if (suckingItem == null || suckingItem.parent != suckPosition)
         {
