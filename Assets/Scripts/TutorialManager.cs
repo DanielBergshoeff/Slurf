@@ -96,7 +96,6 @@ public class TutorialManager : MonoBehaviour
             xAxisRotation = (float)context.ReadValueAsObject();
     }
 
-
     public void ShootSnot(InputAction.CallbackContext context)
     {
         if (currentTutorial > 4)

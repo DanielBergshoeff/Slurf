@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Wood
-  m_Shader: {fileID: -6465566751694194690, guid: ce116103ebaa25444915ef8359f21370,
+  m_Name: M_Porcelain 1
+  m_Shader: {fileID: -6465566751694194690, guid: e5b7ce93c99663643a7842e32f3400ec,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3A187C86:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c2184ebd0f5dcab41b99d9c5b673f4a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_A6CEBFE7_Texture_1:
@@ -30,14 +30,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_3349BDAB: 0
-    - Vector1_355EB823: 0.02
+    - Vector1_355EB823: 0.05
     - Vector1_52B144C: 1
     - Vector1_78361C67: 8.69
     - Vector1_B4C90ACE: 0.85
-    - Vector1_C4792696: 25.29
-    - Vector1_F4F5A38D: 1
+    - Vector1_C4792696: 0.83
+    - Vector1_F4F5A38D: 0
     m_Colors:
-    - Color_25F999C9: {r: 0.5754717, g: 0.43906862, b: 0.3936009, a: 0}
-    - Color_39063C41: {r: 0.9150943, g: 0.83117986, b: 0.60862404, a: 0}
-    - Color_D728B35B: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0}
+    - Color_25F999C9: {r: 0.85882354, g: 0.71788836, b: 0.70980394, a: 0}
+    - Color_39063C41: {r: 0.9056604, g: 0.23457946, b: 0.2007832, a: 0}
+    - Color_97BBDFFA: {r: 0.9150943, g: 0.89409524, b: 0.8503471, a: 0}
+    - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
     - _WorldSpaceLightPos: {r: 0, g: 0, b: 0, a: 0}

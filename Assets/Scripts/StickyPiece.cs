@@ -9,6 +9,7 @@ class StickyPiece : MonoBehaviour, IStickable
     private bool dragging = false;
     private float distance;
     private Vector3 startDist;
+    private int parts;
 
     private AudioSource myAudioSource;
 
@@ -23,6 +24,8 @@ class StickyPiece : MonoBehaviour, IStickable
         myAudioSource = gameObject.AddComponent<AudioSource>();
         myAudioSource.volume = 0.25f;
         tag = "Suckable";
+
+        parts = transform.root.childCount;
     }
 
     private void Update()
@@ -57,6 +60,14 @@ class StickyPiece : MonoBehaviour, IStickable
         sp.fixedJoint = true;
 
         myAudioSource.PlayOneShot(AudioManager.Instance.AudioSnotTouch);
+
+        CheckAllConnected();
+    }
+
+    private void CheckAllConnected()
+    {
+        if (ConnectedPieces.Count == parts - 1)
+            Score.Instance.ShowScore();
     }
 
     public void MakeSticky()
