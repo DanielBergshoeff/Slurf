@@ -70,6 +70,15 @@ public class TrunkController : MonoBehaviour
 
         snotAudio = gameObject.AddComponent<AudioSource>();
         suckAudio = gameObject.AddComponent<AudioSource>();
+
+        if(MultiplayerSpawn.Instance != null) {
+            if(MultiplayerSpawn.Instance.amtOfPlayers == 1) {
+                transform.position = MultiplayerSpawn.Instance.Player1Position.position;
+            }
+            else {
+                transform.position = MultiplayerSpawn.Instance.Player2Position.position;
+            }
+        }
     }
 
     private void SuckPositionTouched(Collider other)
