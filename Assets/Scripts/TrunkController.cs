@@ -18,8 +18,7 @@ public class TrunkController : MonoBehaviour
     [SerializeField] private float snotForce = 250f;
     [SerializeField] private float suckingForce = 2.0f;
 
-    [SerializeField] private InputAction triggerAction;
-    [SerializeField] private InputAction suckingAction;
+    private PlayerInput playerInput;
 
     [SerializeField] private GameObject snotPrefab;
     [SerializeField] private GameObject snotMuzzlePrefab;
@@ -51,16 +50,10 @@ public class TrunkController : MonoBehaviour
 
     private float snotCoolDown = 0f;
 
-    private void Start()
+    private void Awake()
     {
         trunkPartRigidBody = trunkPart.GetComponent<Rigidbody>();
         trunkEndRigidBody = trunkEnd.GetComponent<Rigidbody>();
-
-        triggerAction.started += TriggerPressedTrue;
-        triggerAction.canceled += TriggerPressedFalse;
-
-        suckingAction.started += SuckingTrue;
-        suckingAction.canceled += SuckingFalse;
 
         suckPositionScript = suckPosition.GetComponent<SuckPosition>();
         if (suckPositionScript.suckEvent == null)
@@ -79,6 +72,13 @@ public class TrunkController : MonoBehaviour
                 transform.position = MultiplayerSpawn.Instance.Player2Position.position;
             }
         }
+
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.actions["Rotate"].started += TriggerPressedTrue;
+        playerInput.actions["Rotate"].canceled += TriggerPressedFalse;
+
+        playerInput.actions["Suck"].started += SuckingTrue;
+        playerInput.actions["Suck"].canceled += SuckingFalse;
     }
 
     private void SuckPositionTouched(Collider other)
@@ -95,14 +95,12 @@ public class TrunkController : MonoBehaviour
 
     private void OnEnable()
     {
-        triggerAction.Enable();
-        suckingAction.Enable();
+        playerInput.actions.Enable();
     }
 
     private void OnDisable()
     {
-        triggerAction.Disable();
-        suckingAction.Disable();
+        playerInput.actions.Disable();
     }
 
     private void TriggerPressedTrue(InputAction.CallbackContext context)

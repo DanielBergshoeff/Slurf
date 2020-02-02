@@ -274,7 +274,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RotateTrunk",
+                    "name": "Rotate",
                     "type": "Button",
                     "id": "ead2b6ff-ba8f-45ba-8114-8a171165de6d",
                     "expectedControlType": "",
@@ -296,6 +296,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Suck",
+                    "type": "Button",
+                    "id": "0dd5131a-ea67-470a-b455-cb48068c5e33",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -312,12 +320,23 @@
                 },
                 {
                     "name": "",
+                    "id": "d8841039-dd97-4d5e-b9a9-b5d550cbdaeb",
+                    "path": "<XInputController>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3c1649f5-fa8b-4036-b2ab-e7e32ba4876d",
                     "path": "<DualShockGamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateTrunk",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -411,23 +430,34 @@
                 },
                 {
                     "name": "",
-                    "id": "d8841039-dd97-4d5e-b9a9-b5d550cbdaeb",
-                    "path": "<XInputController>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateTrunk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "09186097-21fc-4aac-9d15-0b8f61d1fb1d",
                     "path": "<XInputController>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "RotateTrunkZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a449cad0-ae49-4ef1-b2fa-7b74cf5fd53f",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Suck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c354692c-aa4f-4b04-ad34-fd26c6ff1d57",
+                    "path": "<DualShockGamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Suck",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
