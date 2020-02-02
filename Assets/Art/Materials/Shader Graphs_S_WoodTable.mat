@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Floor
-  m_Shader: {fileID: -6465566751694194690, guid: ce116103ebaa25444915ef8359f21370,
+  m_Name: Shader Graphs_S_WoodTable
+  m_Shader: {fileID: -6465566751694194690, guid: e5b7ce93c99663643a7842e32f3400ec,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3A187C86:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d3d7178bf74f40944b660573140a2b56, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_A6CEBFE7_Texture_1:
@@ -30,14 +30,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_3349BDAB: 0
-    - Vector1_355EB823: 0.1
-    - Vector1_52B144C: 4
-    - Vector1_78361C67: 8.69
-    - Vector1_B4C90ACE: 0.85
-    - Vector1_C4792696: 1.47
+    - Vector1_6D2592E: 1
+    - Vector1_C4792696: 7.67
     - Vector1_F4F5A38D: 0
     m_Colors:
-    - Color_25F999C9: {r: 0.8584906, g: 0.84275883, b: 0.7086597, a: 0}
-    - Color_39063C41: {r: 0.31412423, g: 0.31412423, b: 0.3679245, a: 0}
+    - Color_25F999C9: {r: 0.2896938, g: 0.3332497, b: 0.5849056, a: 0}
+    - Color_39063C41: {r: 0.7075472, g: 0.5642958, b: 0.4305358, a: 0}
+    - Color_97BBDFFA: {r: 0.8113208, g: 0.65998095, b: 0.4783731, a: 0}
     - Color_D728B35B: {r: 1, g: 1, b: 1, a: 0}
-    - _WorldSpaceLightPos: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_1ABAA5FB: {r: 0, g: 0, b: 0, a: 0}
