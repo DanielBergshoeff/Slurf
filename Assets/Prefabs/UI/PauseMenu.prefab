@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RESTART
+  m_text: menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f699e97101e5b94db1fba6020f57a18, type: 2}
   m_sharedMaterial: {fileID: 8163104503220782828, guid: 5f699e97101e5b94db1fba6020f57a18,
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1156994444952483120}
-    characterCount: 7
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -494,9 +494,10 @@ GameObject:
   - component: {fileID: 3780463586218676569}
   - component: {fileID: 8334410899071051958}
   - component: {fileID: 467679637084076399}
+  - component: {fileID: 8085813439701078340}
   - component: {fileID: 5676384500774300752}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +601,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8334410899071051958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8085813439701078340}
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8085813439701078340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783443722967450376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b582c3b838c98418a45d5243b1ee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionUI: {fileID: 8359781753860747531, guid: 9aec68f0e85d7784d9303a5ce766a6ba,
+    type: 3}
+  transitionOffset: 2
+  transitionInAudio: {fileID: 0}
+  transitionOutAudio: {fileID: 0}
 --- !u!114 &5676384500774300752
 MonoBehaviour:
   m_ObjectHideFlags: 0
