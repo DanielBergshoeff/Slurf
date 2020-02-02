@@ -575,7 +575,7 @@ Transform:
   m_GameObject: {fileID: 6555159490858085412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.00153, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 9.379435, y: 9.379435, z: 9.379435}
   m_Children: []
   m_Father: {fileID: 7891957727753251307}
   m_RootOrder: 2
@@ -660,54 +660,6 @@ MonoBehaviour:
   snotCoolDownTotal: 1
   snotForce: 250
   suckingForce: 5
-  triggerAction:
-    m_Name: Trigger
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 600e9288-7a9c-4b33-8e46-65f0709fad74
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 9ba982de-da7e-43c3-b675-c9b8b32caedf
-      m_Path: <XInputController>/leftShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-    - m_Name: 
-      m_Id: c18d9168-b005-409e-922a-97171b8d227e
-      m_Path: <DualShockGamepad>/leftTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-  suckingAction:
-    m_Name: Sucking
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 82122933-a519-40cd-8bb0-afde416ec68f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c69ddf7e-b9ed-4dd2-96ca-8ceec2a8ca28
-      m_Path: <XInputController>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Sucking
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 0230c0e2-4547-4602-ab34-47351469fbe5
-      m_Path: <DualShockGamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Sucking
-      m_Flags: 0
   snotPrefab: {fileID: 2257263432497277425, guid: 37604281bf44c9d4eb8f2315f3899fef,
     type: 3}
   snotMuzzlePrefab: {fileID: 4876770476663918920, guid: 52c1107c7334ffa45ac58d48b9ad32f2,
@@ -979,6 +931,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 478ae187-a472-42b4-8d65-dcc12d69484b
     m_ActionName: Player2/ShootSnot[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0dd5131a-ea67-470a-b455-cb48068c5e33
+    m_ActionName: Player/Suck[/XInputControllerWindows/rightTrigger,/DualShock4GamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -996,54 +952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4b6562d66998145b06401888bdb70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerAction:
-    m_Name: Trigger
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 3c48dff9-f005-44b8-95ae-c802c091d3e8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 81db4bfa-f612-409d-9fd2-bbc779409263
-      m_Path: <XInputController>/leftShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 1be27dd4-945e-4c15-b1fc-57cb00a2cf8d
-      m_Path: <DualShockGamepad>/leftTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-  suckingAction:
-    m_Name: Sucking
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: b6803a68-d68b-409f-9399-a2c747853f4b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: afe4a264-4cf4-4544-83e1-b3867e95eeb1
-      m_Path: <XInputController>/rightStick/down
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Sucking
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 7724fc1d-dbe8-4b87-92f8-ccdbfbb990b1
-      m_Path: <DualShockGamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Sucking
-      m_Flags: 0
 --- !u!54 &6555159491017480611
 Rigidbody:
   m_ObjectHideFlags: 0

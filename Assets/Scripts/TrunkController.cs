@@ -118,6 +118,7 @@ public class TrunkController : MonoBehaviour
 
     private void SuckingTrue(InputAction.CallbackContext context)
     {
+        Debug.Log("Suck");
         sucking = true;
         suckAudio.clip = audioSucking;
         suckAudio.loop = true;
@@ -127,6 +128,7 @@ public class TrunkController : MonoBehaviour
 
     private void SuckingFalse(InputAction.CallbackContext context)
     {
+        Debug.Log("Stop suck");
         sucking = false;
         suckAudio.Stop();
         suckAudio.volume = 1.0f;

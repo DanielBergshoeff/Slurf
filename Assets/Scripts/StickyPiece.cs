@@ -12,6 +12,7 @@ class StickyPiece : MonoBehaviour, IStickable
     private int parts;
 
     private AudioSource myAudioSource;
+    public bool tutorialDone = true;
 
     private void Awake()
     {
@@ -30,6 +31,8 @@ class StickyPiece : MonoBehaviour, IStickable
 
     private void Update()
     {
+        CheckAllConnected();
+
         if (!dragging) { return; }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,13 +64,15 @@ class StickyPiece : MonoBehaviour, IStickable
 
         myAudioSource.PlayOneShot(AudioManager.Instance.AudioSnotTouch);
 
-        CheckAllConnected();
     }
 
     private void CheckAllConnected()
     {
-        if (ConnectedPieces.Count == parts - 1)
-            Score.Instance.ShowScore();
+        if (ConnectedPieces.Count == parts - 1 && tutorialDone)
+        {
+            Score.Instance.ShowScore("Lvl - 1.0");
+            Destroy(this);
+        }
     }
 
     public void MakeSticky()

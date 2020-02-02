@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -11,15 +12,24 @@ public class TutorialManager : MonoBehaviour
     private bool busy;
     private bool snotShooted;
     private int currentTutorial = 1;
-    private GameObject checkMark;
+    private GameObject _checkMark;
+    public GameObject checkMark
+    {
+        get { return _checkMark; }
+        set
+        {
+            _checkMark = value;
+            _checkMark.SetActive(false);
+        }
+    }
 
-    [SerializeField] private InputAction triggerAction;
-    [SerializeField] private InputAction suckingAction;
     private bool sucking;
     private bool triggerPressed = false;
     private float endAxis;
     private TrunkController controller;
     private string name1;
+
+    private PlayerInput playerInput;
 
     private void Awake()
     {
@@ -34,20 +44,22 @@ public class TutorialManager : MonoBehaviour
         controller = FindObjectOfType<TrunkController>();
         tutorialShower = FindObjectOfType<ShowTutorial>();
         tutorialShower.reset.AddListener(ResetCheckmark);
-        suckingAction.started += SuckingTrue;
-        triggerAction.started += TriggerPressedTrue;
         name1 = "Check" + gameObject.name.Last();
-    }
 
-    private void Start()
-    {
-        ResetCheckmark();
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.actions["Rotate"].started += TriggerPressedTrue;
+        playerInput.actions["Suck"].started += SuckingTrue;
+
+        var pieces = FindObjectsOfType<StickyPiece>();
+        foreach (var piece in pieces)
+        {
+            piece.tutorialDone = false;
+        }
     }
 
     private void ResetCheckmark()
     {
         GetCheckMark();
-        checkMark.SetActive(false);
         busy = false;
     }
 
@@ -97,7 +109,18 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             default:
+                print("done it");
+                Invoke("TutorialDone", 2f);
                 break;
+        }
+    }
+
+    private void TutorialDone()
+    {
+        var pieces = FindObjectsOfType<StickyPiece>();
+        foreach (var piece in pieces)
+        {
+            piece.tutorialDone = true;
         }
     }
 
@@ -135,14 +158,12 @@ public class TutorialManager : MonoBehaviour
 
     private void OnEnable()
     {
-        suckingAction.Enable();
-        triggerAction.Enable();
+        playerInput.actions.Enable();
     }
 
     private void OnDisable()
     {
-        suckingAction.Disable();
-        triggerAction.Disable();
+        playerInput.actions.Disable();
     }
 
     private void TriggerPressedTrue(InputAction.CallbackContext context)

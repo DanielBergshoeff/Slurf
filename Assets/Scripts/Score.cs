@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
@@ -24,13 +25,14 @@ public class Score : MonoBehaviour
         scoreBord = (GameObject)Resources.Load("Scoreboard_Inbetween");
     }
 
-    public void ShowScore()
+    public void ShowScore(string s)
     {
         Transform transform1 = FindObjectOfType<Canvas>().transform.root;
         foreach (Transform child in transform1)
         {
             Destroy(child.gameObject);
         }
-        Instantiate(scoreBord, transform1);
+        GameObject gameObject1 = Instantiate(scoreBord, transform1);
+        gameObject1.GetComponentInChildren<Button>().name = s;
     }
 }

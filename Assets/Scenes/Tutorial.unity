@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5435,6 +5435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ConnectedPieces: []
   fixedJoint: 0
+  tutorialDone: 1
 --- !u!64 &1280697914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6385,6 +6386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ConnectedPieces: []
   fixedJoint: 0
+  tutorialDone: 1
 --- !u!64 &1424249583
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10010,7 +10012,7 @@ PrefabInstance:
     - target: {fileID: 4069979566780612787, guid: 51c1facce1c0cf645a7c5892b03851c8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3457634
+      value: 0.115
       objectReference: {fileID: 0}
     - target: {fileID: 4069979566780612787, guid: 51c1facce1c0cf645a7c5892b03851c8,
         type: 3}
@@ -10020,7 +10022,7 @@ PrefabInstance:
     - target: {fileID: 4069979566780612787, guid: 51c1facce1c0cf645a7c5892b03851c8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.583296
+      value: -8.326
       objectReference: {fileID: 0}
     - target: {fileID: 4069979566780612787, guid: 51c1facce1c0cf645a7c5892b03851c8,
         type: 3}
